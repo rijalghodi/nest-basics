@@ -1,0 +1,10 @@
+### GET all
+
+GET http://localhost:3000/food/1/true
+
+### GET custom
+GET http://localhost:3000/food/custom?page=1&limit=abc
+
+
+### POST
+POST http://localhost:3000/special-food
