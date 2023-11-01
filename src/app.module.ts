@@ -9,7 +9,14 @@ import { ColorModule } from './color/color.module';
 import { DogModule } from './dog/dog.module';
 
 @Module({
-  imports: [CatModule, BookModule, AnimalModule, CountryModule, ColorModule, DogModule],
+  imports: [
+    CatModule,
+    BookModule,
+    AnimalModule,
+    CountryModule,
+    ColorModule,
+    DogModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
