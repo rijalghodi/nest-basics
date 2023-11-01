@@ -6,9 +6,10 @@ import { BookModule } from './book/book.module';
 import { AnimalModule } from './animal/animal.module';
 import { CountryModule } from './country/country.module';
 import { ColorModule } from './color/color.module';
+import { DogModule } from './dog/dog.module';
 
 @Module({
-  imports: [CatModule, BookModule, AnimalModule, CountryModule, ColorModule],
+  imports: [CatModule, BookModule, AnimalModule, CountryModule, ColorModule, DogModule],
   controllers: [AppController],
   providers: [AppService],
 })
