@@ -1,0 +1,9 @@
+### GET 404
+
+GET http://localhost:3000/employee/404
+
+### GET forbidden
+GET http://localhost:3000/employee/forbidden
+
+### GET bad
+GET http://localhost:3000/employee/bad

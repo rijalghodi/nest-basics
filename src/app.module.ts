@@ -7,6 +7,8 @@ import { AnimalModule } from './animal/animal.module';
 import { CountryModule } from './country/country.module';
 import { ColorModule } from './color/color.module';
 import { DogModule } from './dog/dog.module';
+import { EmployeeModule } from './employee/employee.module';
+import { FoodModule } from './food/food.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { DogModule } from './dog/dog.module';
     CountryModule,
     ColorModule,
     DogModule,
+    EmployeeModule,
+    FoodModule,
   ],
   controllers: [AppController],
   providers: [AppService],
