@@ -1,0 +1,38 @@
+### Create Game
+POST http://localhost:3000/game
+content-type: application/json
+
+{
+    "name": "Mobile Legend",
+    "role": "admin"
+}
+
+### Create by forbidden role
+POST http://localhost:3000/game
+content-type: application/json
+
+{
+    "name": "Mobile Legend",
+    "role": "player"
+}
+
+
+### Play game
+POST http://localhost:3000/game/play
+content-type: application/json
+
+{
+    "level": 3
+}
+
+### Play forbidden game
+POST http://localhost:3000/game/play
+content-type: application/json
+
+{
+    "level": 0
+}
+
+
+### Get Games
+GET http://localhost:3000/game

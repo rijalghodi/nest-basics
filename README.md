@@ -32,23 +32,23 @@ $ yarn run start:prod
 
 ## Modules
 
-### Animal | Controller
+### Animal --- Controller
 
-### Book | Service and Provider
+### Book --- Service and Provider
 
-### Cat, Color, Country | Module
+### Cat, Color, Country --- Module
 
-### Dog | Middleware
+### Dog --- Middleware
 
-### Employee | Exception Filter
+### Employee --- Exception Filter
 
-### Food | Pipes
+### Food --- Pipes
 
-### Game | Guards
+### Game -- Guards
 
-### Hospital | Interceptors
+### Hospital - Interceptors
 
-### Image | Custom Decorators
+### Image --- Custom Decorators
 
 ### Job
 

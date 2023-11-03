@@ -9,6 +9,7 @@ import { ColorModule } from './color/color.module';
 import { DogModule } from './dog/dog.module';
 import { EmployeeModule } from './employee/employee.module';
 import { FoodModule } from './food/food.module';
+import { GameModule } from './game/game.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { FoodModule } from './food/food.module';
     DogModule,
     EmployeeModule,
     FoodModule,
+    GameModule,
   ],
   controllers: [AppController],
   providers: [AppService],
