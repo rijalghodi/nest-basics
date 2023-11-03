@@ -6,3 +6,7 @@ export class CreateGameDto {
 export class PlayGameDto {
   level: number;
 }
+
+export class GetAllGameDto {
+  membership: string;
+}

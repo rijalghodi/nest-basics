@@ -1,9 +1,10 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post, SetMetadata, UseGuards } from '@nestjs/common';
 import { AuthGuard } from './guards/auth.guard';
 import { RolesGuard } from './guards/roles.guard';
-import { CreateGameDto, PlayGameDto } from './dtos/game.dto';
+import { CreateGameDto, GetAllGameDto, PlayGameDto } from './dtos/game.dto';
 import { LevelGuard } from './guards/level.guard';
 import { Roles } from './decorators/roles.decorator';
+import { MembershipGuard } from './guards/membership.guard';
 
 /**
  * How To Apply Guard?
@@ -18,8 +19,8 @@ import { Roles } from './decorators/roles.decorator';
 @UseGuards(AuthGuard) // <= Apply AuthGuard to all handlers
 export class GameController {
   @Post()
-  @Roles(['admin'])
   @UseGuards(RolesGuard) // <= Apply RolesGuard to this handler
+  @Roles(['admin', 'developer'])
   create(@Body() createGameDto: CreateGameDto) {
     return `Game ${createGameDto.name} created!`;
   }
@@ -30,8 +31,10 @@ export class GameController {
     return `Game level ${body.level} played successfully!`;
   }
 
-  @Get()
-  findAll() {
-    return 'This action returns all games';
+  @Post('premium')
+  @UseGuards(MembershipGuard)
+  @SetMetadata('membership', ['premium', 'vip'])
+  playPremiumGame(@Body() body: GetAllGameDto) {
+    return `Premium game is played successfully. Your membership is ${body.membership}!`;
   }
 }

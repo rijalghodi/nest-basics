@@ -34,5 +34,18 @@ content-type: application/json
 }
 
 
-### Get Games
-GET http://localhost:3000/game
+### Play premium Games
+POST http://localhost:3000/game/premium
+content-type: application/json
+
+{
+    "membership": "premium"
+}
+
+### Play forbidden premium Games
+POST http://localhost:3000/game/premium
+content-type: application/json
+
+{
+    "membership": "free"
+}

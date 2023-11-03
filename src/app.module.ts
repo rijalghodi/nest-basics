@@ -10,6 +10,7 @@ import { DogModule } from './dog/dog.module';
 import { EmployeeModule } from './employee/employee.module';
 import { FoodModule } from './food/food.module';
 import { GameModule } from './game/game.module';
+import { HospitalModule } from './hospital/hospital.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { GameModule } from './game/game.module';
     EmployeeModule,
     FoodModule,
     GameModule,
+    HospitalModule,
   ],
   controllers: [AppController],
   providers: [AppService],
