@@ -19,8 +19,15 @@ import { MembershipGuard } from './guards/membership.guard';
 @UseGuards(AuthGuard) // <= Apply AuthGuard to all handlers
 export class GameController {
   @Post()
-  @UseGuards(RolesGuard) // <= Apply RolesGuard to this handler
+  /**
+   * How to apply Role Based Guard using custom decorator?
+   *
+   * - Create a custom decorator to attach metadata using Reflector.createDecorator. See ./decoratos/roles.decorator
+   * - Create a guard that can read the metadata. See ./guards/roles.guard
+   * - Apply that guard here and define what roles that allowed here
+   */
   @Roles(['admin', 'developer'])
+  @UseGuards(RolesGuard) // <= Apply RolesGuard to this handler
   create(@Body() createGameDto: CreateGameDto) {
     return `Game ${createGameDto.name} created!`;
   }
@@ -32,8 +39,13 @@ export class GameController {
   }
 
   @Post('premium')
+  /**
+   * How to apply Role Based Guard using low-level @SetMetadata decorator?
+   */
   @UseGuards(MembershipGuard)
-  @SetMetadata('membership', ['premium', 'vip'])
+  // This is how to set metadata with name 'membership'
+  // It will be accessed in ./guards/membership.guard
+  @SetMetadata('membership', ['premium', 'vip']) // <====
   playPremiumGame(@Body() body: GetAllGameDto) {
     return `Premium game is played successfully. Your membership is ${body.membership}!`;
   }

@@ -11,6 +11,8 @@ import { EmployeeModule } from './employee/employee.module';
 import { FoodModule } from './food/food.module';
 import { GameModule } from './game/game.module';
 import { HospitalModule } from './hospital/hospital.module';
+import { JobModule } from './job/job.module';
+import { KingdomModule } from './kingdom/kingdom.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { HospitalModule } from './hospital/hospital.module';
     FoodModule,
     GameModule,
     HospitalModule,
+    JobModule,
+    KingdomModule,
   ],
   controllers: [AppController],
   providers: [AppService],
